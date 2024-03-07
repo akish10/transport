@@ -1,0 +1,5 @@
+Python 3.10.12
+Django 3.2.12
+HTML5
+CSS
+JavaScript
