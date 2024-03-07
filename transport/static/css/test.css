@@ -1,0 +1,23 @@
+html{ background-color:antiquewhite;}
+footer{
+    background-color:white;
+    height:35px;
+    text-align:center;
+    font-size:25px;
+    color:blue;
+}
+nav{ height:40px;
+background-color:azure;
+text-align:center;
+margin:0px;
+padding:0px;
+}
+
+a:active{color:coral;}
+
+a:hover{color:green}
+
+button{
+    background-color:blue;
+    color:white;
+}

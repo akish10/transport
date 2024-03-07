@@ -1,0 +1,48 @@
+html{
+    padding:0px;
+    margin:0px;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    background-color:burlywood;
+    text-align: center;
+    display:flex;
+}
+
+.form{
+    background-color:white;
+    padding:15px;
+    border-radius:10px;
+    width:65%;
+    height:75%;
+
+}
+input{
+    padding:5px;
+    border-radius:6px;
+}
+
+label{
+    font-size:20px;    
+}
+
+.submit{
+    background-color:blue;
+    color:white;
+    padding:5px;
+    margin:10px;
+    font-size:15px;
+}
+
+.home{
+    background-color:white;
+    width:35%;
+    height:20%;
+    border-radius:8px;
+    margin:8px;
+    padding:5px;
+    font-size:15px;
+}
+a{
+    color:black;
+}

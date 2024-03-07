@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'CSS/truck.css' %}">
+    <title>Book a vehicle</title>
+</head>
+<body>
+    <h3>Available vehicles</h3>
+
+    <table id="tableid">
+        <thead>
+            <tr>
+                <th>Vehicle id</th>
+                <th>Vehicle capacity</th>
+                <th>Vehicle type</th>
+                <th> Refrigerated</th>
+                <th>Book</th>
+                <th>Act</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehicle in vehicles_list %}
+            <tr data-vehicle-id="{{vehicle.Vehicle_id}}" data-vehicle-capacity="{{vehicle.Capacity}}" data-vehicle-type="{{vehicle.Type}}" data-refrigerated="{{vehicle.refrigerated}}">
+                <td>{{vehicle.Vehicle_id}}</td>
+                <td>{{vehicle.Capacity}}</td>
+                <td>{{vehicle.Type}}</td>
+                <td>{{vehicle.refrigerated}}</td>
+                <td><button class="book">Book vehicle</button></td>
+                <td><button class="return">Return Vehicle</button></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+<script src="{%static 'JS/truck.js'%}">
+
+</script>
+</body>
+</html>

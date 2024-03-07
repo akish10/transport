@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Vehicles</title>
+</head>
+<body>
+
+
+
+<select id="vehicleDropdown">
+    
+</select>
+
+<script>
+
+
+var vehicleDropdown = document.getElementById("vehicleDropdown");
+
+
+function fetchAvailableVehicles() {
+    fetch('/get_available_vehicles/')
+        .then(response => response.json())
+        .then(data => {
+            data.vehicles.forEach(vehicle => {
+                var option = document.createElement("option");
+                option.text = vehicle.make + " " + vehicle.model + " " + vehicle.year;
+                vehicleDropdown.add(option);
+            });
+        })
+        .catch(error => console.error('Error fetching available vehicles:', error));
+}
+
+
+window.onload = fetchAvailableVehicles;
+
+</script>
+
+</body>
+</html>

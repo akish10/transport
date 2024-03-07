@@ -1,0 +1,31 @@
+html{
+    background-color: burlywood;
+    margin:0;
+    padding:0;
+    text-align: center;
+
+}
+form
+{
+    display:flex;
+    flex-direction: column;
+    padding:5px;
+    margin:auto;
+    justify-content: center;
+    width:35%;
+    height:95%;
+    align-items: center;
+    border-radius: 6px;
+    background-color: white;
+}
+input{
+    padding:10px;
+    margin:8px;
+}
+label{
+    font-weight: bold;
+}
+
+.btn{
+    background-color: green;
+}

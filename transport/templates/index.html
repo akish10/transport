@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load  static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>landing page</title>
+  <link href="{% static 'css/index.css'%}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  
+  <main>
+    <h4>Welcome {{username}}</h4>
+    <div id="userprofile">
+    <div>
+      <a href="{% url 'vehicles'%}"><p>See available vehicles</p></a>
+      <a href="{% url 'book_vehicle' %}"><p>Book vehicle</p></a>
+      <a href="{% url 'make_payment'%}"><p>Make payment</p></a>
+    </div>
+
+
+    <div id="content">
+      <h2>Booking status</h2>
+      <h4>Your booked vehicle details:</h4>
+
+      <p>Vehicle ID: {{ vehicle.Vehicle_id }}</p>
+      <p>Capacity: {{ vehicle.Capacity }}</p>
+      <p>Type: {{ vehicle.Type }}</p>
+      <p>Refrigerated: {{ vehicle.refrigerated }}</p>
+
+      <form action="{% url 'return_vehicle' %}" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="vehicle_id" value="{{vehicle.Vehicle_id }}">
+          <button type="submit">Return Vehicle</button>
+      </form>
+
+    </div>
+    <div>
+      <h3>About us</h3>
+          <p> <span> At FarmMovers</span>, we are passionate about supporting farmers and 
+            agricultural businesses in transporting their valuable crops. With years of experience in 
+            the industry, we understand the challenges you face and the importance of reliable 
+            transportation. Our mission is to provide affordable and convenient truck rental services 
+            specifically tailored to meet the unique needs of farmers. We take pride in offering a wide 
+            range of trucks that are well-maintained and equipped to handle various types of crops. 
+            Our dedicated team is committed to ensuring that your products are transported safely 
+            and efficiently, so you can focus on what you do best - farming!
+          </p>
+    </div>
+    </div>
+  </main>
+  <footer>
+    <small>&copy; Copyright 2024, farmMovers Corporation limited</small>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/pay.css'%}">
+    <title>Payment</title>
+</head>
+<body>
+    
+        <h2>Make Payment</h2>
+        <form method="post" action="" id="paymentForm">
+            {% csrf_token %}
+
+            <div>
+                <label for="cardholder" class="label">Card Holder:</label>
+                <input type="text" name="cardholder" id="cardholder"  required >
+
+            </div>
+            <div>
+                <label for="" class="cardnumber">Card Number:</label>
+                <input type="number" name="cardnumber" id="cardnumber" required  data-mask="0000000000000000">  
+            </div>
+            <div>
+                <label for="expiry" class="label">Expiry Date:</label>
+                <input type="date" name="expiry" id="expiry" required placeholder="00 \ 00" > 
+            </div>
+            <div>
+                <label for="cvc" class="label">CVC:</label>
+                <input type="number" name="cvc" id="cvc" required placeholder="000" pattern="[0-9]">  
+            </div>
+
+            <div>
+               <label for="Vehicle_id"> Vehicle id </label> 
+               <input type="text" name="Vehicle_id" id="Vehicle_id">
+            </div>
+            <div>
+                <label for="amount">Amount in ksh</label>
+                <input type="number" id="amount" name="amount">
+            </div>
+            <div>
+                <input type="submit"class="btn" value="Pay">
+            </div>
+
+
+        </form>
+    <script>
+        var updateDatabaseUrl = "{% url 'update_database' %}";
+    </script>
+    <script scr="{% static 'js/pay.js' %}"></script>
+</body>
+</html>

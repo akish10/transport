@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="form">
+    <form action="" method="POST">
+         {% csrf_token %}
+        <h1>LOGIN</h1>
+           <label for="uname"> Username</label>
+           <input type="text" id="uname" placeholder="Create a username Username" name="uname"><br>
+            <label for="pass"> Password</label>
+           <input type="password" id="pass" placeholder="Create a password" name="pass"><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
